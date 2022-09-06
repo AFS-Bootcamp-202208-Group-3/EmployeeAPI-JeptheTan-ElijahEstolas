@@ -21,7 +21,7 @@ public class EmployeeRepository {
 
     public Employee findById (Integer employeeID) {
         return employees.stream()
-                .filter(employee -> employee.getEmployeeID() == employeeID)
+                .filter(employee -> employee.getEmployeeID() == employeeID.intValue())
                 .findFirst()
                 .orElseThrow(NoEmployeeFoundException::new);
     }
